@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCROLLING EFFECT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="firstdiv">
+    <h1 class="firstdivh1">Please move scroll to bottom and you see that section will appear one by one</h1>
+</div>
+    
+<div id="div1">
+    <h1>SECTION 1</h1>
+    
+</div>
+
+<div id="div2">
+    <h1>SECTION 2</h1>
+ 
+</div>
+
+<div id="div3">
+    <h1>SECTION 3</h1>
+   
+</div>
+</body>
+
+<script>
+
+$(document).ready(function() {
+    $("#div1").css({"visibility":"hidden"}); // Başlangıçta görünmez yap
+    $("#div2").css({"visibility":"hidden"}); // Başlangıçta görünmez yap
+    $("#div3").css({"visibility":"hidden"}); // Başlangıçta görünmez yap
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200 ) {
+            $("#div1").css({"visibility":"visible"});
+        } else {
+            $("#div1").css({"visibility":"hidden"});
+        }
+
+        if ($(this).scrollTop() > 800 ) {
+            $("#div2").css({"visibility":"visible"});
+        } else {
+            $("#div2").css({"visibility":"hidden"});
+        }
+
+        if ($(this).scrollTop() > 1200 ) {
+            $("#div3").css({"visibility":"visible"});
+        } else {
+            $("#div3").css({"visibility":"hidden"});
+        }
+    });
+});
+
+</script>
+</html>
